@@ -1,0 +1,28 @@
+CREATE DATABASE garderieqc;
+
+USE garderieqc;
+
+CREATE TABLE kids (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    date_of_birth DATE,
+    nationality VARCHAR(50),
+    id_mother INT,
+    id_father INT,
+    FOREIGN KEY (id_mother) REFERENCES parents(id),
+    FOREIGN KEY (id_father) REFERENCES parents(id)
+);
+
+CREATE TABLE parents (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    phone_number VARCHAR(20)
+);
+
+CREATE TABLE garderie (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50)
+);
